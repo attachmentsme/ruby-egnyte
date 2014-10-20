@@ -77,7 +77,6 @@ module Egnyte
     def request(uri, request, return_parsed_response=true)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
-      http.ssl_version = :SSLv3
       #http.set_debug_output($stdout)
       
       request.add_field('Authorization', "Bearer #{@access_token.token}")
